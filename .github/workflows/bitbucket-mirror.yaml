@@ -10,6 +10,6 @@ jobs:
     uses: aps831/workflows/.github/workflows/bitbucket-mirror.yaml@master
     with:
       username: aps831-github
-      repositoryname: basic-template
+      repositoryname: trunk-io-plugins
     secrets:
       BITBUCKET_SSH_PRIVATE_KEY: ${{ secrets.BITBUCKET_SSH_PRIVATE_KEY }}
