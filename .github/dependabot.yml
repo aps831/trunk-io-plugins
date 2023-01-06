@@ -8,3 +8,12 @@ updates:
       - "aps831"
     labels:
       - "enhancement"
+
+  - package-ecosystem: "pip"
+    directory: "/actions/commitizen"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "aps831"
+    labels:
+      - "enhancement"

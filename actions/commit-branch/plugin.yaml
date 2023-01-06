@@ -1,0 +1,10 @@
+version: 0.1
+actions:
+  definitions:
+    - id: commit-branch
+      display_name: Commit Branch
+      description: Git hook to warn when committing to 'master' branch
+      run: ${plugin}/actions/commit-branch/commit-branch.sh
+      interactive: true
+      triggers:
+        - git_hooks: [pre-commit]
