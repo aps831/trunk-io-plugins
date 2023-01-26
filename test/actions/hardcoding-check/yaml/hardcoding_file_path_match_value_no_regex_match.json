@@ -1,0 +1,12 @@
+[
+  {
+    "description": "Greeting",
+    "value": "^hello$",
+    "files": [
+      {
+        "filePath": "test.yaml",
+        "valuePath": ".a.b.c"
+      }
+    ]
+  }
+]

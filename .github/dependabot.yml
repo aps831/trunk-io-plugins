@@ -16,3 +16,11 @@ updates:
       - "aps831"
     labels:
       - "dependencies"
+  - package-ecosystem: "gomod"
+    directory: "/actions/hardcoding-check"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "aps831"
+    labels:
+      - "dependencies"

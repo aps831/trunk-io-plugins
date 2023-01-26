@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": ".tool-versions",
+        "valuePath": "greeting"
+      },
+      {
+        "filePath": ".tool-versions",
+        "valuePath": "farewell"
+      }
+    ]
+  }
+]

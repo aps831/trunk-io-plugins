@@ -1,0 +1,12 @@
+[
+  {
+    "description": "Farewell",
+    "value": "goodbye, world",
+    "files": [
+      {
+        "filePath": "test.yaml",
+        "valuePath": ".a.b.c"
+      }
+    ]
+  }
+]

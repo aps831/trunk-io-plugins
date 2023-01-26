@@ -1,0 +1,14 @@
+---
+version: 0.1
+actions:
+  definitions:
+    - id: hardcoding-check
+      display_name: Hardcoding Check
+      description: Git hook to warn when hardcoded values are not consistent
+      run:
+        (cd ${plugin}/actions/hardcoding-check && ./dependencies.sh > /dev/null 2>&1) &&
+        ${plugin}/actions/hardcoding-check/check.sh
+      runtime: go
+      interactive: true
+      triggers:
+        - git_hooks: [pre-commit]

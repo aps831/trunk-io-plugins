@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.json",
+        "valuePath": ".a.b.c"
+      }
+    ]
+  },
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.json",
+        "valuePath": ".d.e.f"
+      }
+    ]
+  }
+]

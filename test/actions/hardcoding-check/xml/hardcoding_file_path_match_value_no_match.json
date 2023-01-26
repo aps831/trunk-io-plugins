@@ -1,0 +1,12 @@
+[
+  {
+    "description": "Farewell",
+    "value": "goodbye, world",
+    "files": [
+      {
+        "filePath": "test.xml",
+        "valuePath": ".root.a.b.c"
+      }
+    ]
+  }
+]

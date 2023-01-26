@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": "test.xml",
+        "valuePath": ".root.a.b.c",
+        "valueSuffix": ", world"
+      }
+    ]
+  }
+]

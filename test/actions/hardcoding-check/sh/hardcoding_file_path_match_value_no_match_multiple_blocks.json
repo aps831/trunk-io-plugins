@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": "test.sh",
+        "valuePath": "greeting"
+      }
+    ]
+  },
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": "test.sh",
+        "valuePath": "farewell"
+      }
+    ]
+  }
+]

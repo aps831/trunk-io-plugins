@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hel",
+    "files": [
+      {
+        "filePath": "test.sh",
+        "valuePath": "greeting",
+        "valueSuffix": "lo"
+      }
+    ]
+  }
+]

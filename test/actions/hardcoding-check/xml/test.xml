@@ -1,0 +1,12 @@
+<root>
+  <a>
+    <b>
+      <c>hello, world</c>
+    </b>
+  </a>
+  <d>
+    <e>
+      <f>goodbye, world</f>
+    </e>
+  </d>
+</root>

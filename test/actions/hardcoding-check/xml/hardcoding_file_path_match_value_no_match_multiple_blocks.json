@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.xml",
+        "valuePath": ".root.a.b.c"
+      }
+    ]
+  },
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.xml",
+        "valuePath": ".root.d.e.f"
+      }
+    ]
+  }
+]

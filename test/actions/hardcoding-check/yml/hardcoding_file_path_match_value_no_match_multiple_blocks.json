@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.yml",
+        "valuePath": ".a.b.c"
+      }
+    ]
+  },
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.yml",
+        "valuePath": ".d.e.f"
+      }
+    ]
+  }
+]

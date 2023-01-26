@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.json",
+        "valuePath": ".a.b.missing"
+      },
+      {
+        "filePath": "test.json",
+        "valuePath": ".d.e.f"
+      }
+    ]
+  }
+]

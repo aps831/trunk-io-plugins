@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.tf",
+        "valuePath": ".a.b[0].c"
+      }
+    ]
+  },
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.tf",
+        "valuePath": ".d.e[0].f"
+      }
+    ]
+  }
+]

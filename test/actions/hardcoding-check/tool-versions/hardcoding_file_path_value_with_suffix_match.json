@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hel",
+    "files": [
+      {
+        "filePath": ".tool-versions",
+        "valuePath": "greeting",
+        "valueSuffix": "lo"
+      }
+    ]
+  }
+]
