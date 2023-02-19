@@ -16,6 +16,7 @@ jobs:
       - name: run tests
         run: .bats/bats/bin/bats bats -r test/
   publish:
+    needs: test
     permissions:
       contents: write
       packages: write
