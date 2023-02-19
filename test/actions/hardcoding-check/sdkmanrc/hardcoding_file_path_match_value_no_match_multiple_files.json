@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": ".sdkmanrc",
+        "valuePath": "greeting"
+      },
+      {
+        "filePath": ".sdkmanrc",
+        "valuePath": "farewell"
+      }
+    ]
+  }
+]

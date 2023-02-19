@@ -132,6 +132,22 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
 
         fi
 
+      # .sdkmanrc
+      elif [[ ${file} == *.sdkmanrc ]]; then
+
+        actual=$(grep "${valuePath}" "${file}" | awk '{s=index($1,"=");print substr($1,s+1)}')
+        expected="${valuePrefix}${value}${valueSuffix}"
+
+        if [[ ${actual} == "" ]]; then
+
+          output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
+
+        elif ! [[ ${actual} =~ ${expected} ]]; then
+
+          output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
+
+        fi
+
       else
 
         output="${output}\nFile type '${file}' not supported"
