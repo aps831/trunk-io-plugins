@@ -52,6 +52,12 @@ setup() {
     assert_output --regexp "File '.*/missing.yaml' not found for value 'hello, world' of 'Greeting' at path '.a.b.c'"
 }
 
+@test "[yaml] should return path invalid output" {
+    run check.sh ${CURRENT_PATH}/yaml/hardcoding_file_no_match_path_invalid.json
+    assert_failure 1
+    assert_output --regexp "Path 'a.b.c' not valid for value 'hello, world' of 'Greeting' in file '.*/test.yaml'"
+}
+
 @test "[yaml] should return path not found output" {
     run check.sh ${CURRENT_PATH}/yaml/hardcoding_file_match_path_no_match.json
     assert_failure 1
@@ -133,6 +139,12 @@ setup() {
     run check.sh ${CURRENT_PATH}/yml/hardcoding_file_no_match.json
     assert_failure 1
     assert_output --regexp "File '.*/missing.yml' not found for value 'hello, world' of 'Greeting' at path '.a.b.c'"
+}
+
+@test "[yml] should return path invalid output" {
+    run check.sh ${CURRENT_PATH}/yml/hardcoding_file_no_match_path_invalid.json
+    assert_failure 1
+    assert_output --regexp "Path 'a.b.c' not valid for value 'hello, world' of 'Greeting' in file '.*/test.yml'"
 }
 
 @test "[yml] should return path not found output" {
@@ -218,6 +230,12 @@ setup() {
     assert_output --regexp "File '.*/missing.json' not found for value 'hello, world' of 'Greeting' at path '.a.b.c'"
 }
 
+@test "[json] should return path invalid output" {
+    run check.sh ${CURRENT_PATH}/json/hardcoding_file_no_match_path_invalid.json
+    assert_failure 1
+    assert_output --regexp "Path 'a.b.c' not valid for value 'hello, world' of 'Greeting' in file '.*/test.json'"
+}
+
 @test "[json] should return path not found output" {
     run check.sh ${CURRENT_PATH}/json/hardcoding_file_match_path_no_match.json
     assert_failure 1
@@ -301,6 +319,12 @@ setup() {
     assert_output --regexp "File '.*/missing.tf' not found for value 'hello, world' of 'Greeting' at path '.a.b\[0\].c'"
 }
 
+@test "[tf] should return path invalid output" {
+    run check.sh ${CURRENT_PATH}/tf/hardcoding_file_no_match_path_invalid.json
+    assert_failure 1
+    assert_output --regexp "Path 'a.b.c' not valid for value 'hello, world' of 'Greeting' in file '.*/test.tf'"
+}
+
 @test "[tf] should return path not found output" {
     run check.sh ${CURRENT_PATH}/tf/hardcoding_file_match_path_no_match.json
     assert_failure 1
@@ -382,6 +406,12 @@ setup() {
     run check.sh ${CURRENT_PATH}/xml/hardcoding_file_no_match.json
     assert_failure 1
     assert_output --regexp "File '.*/missing.xml' not found for value 'hello, world' of 'Greeting' at path '.root.a.b.c'"
+}
+
+@test "[xml] should return path invalid output" {
+    run check.sh ${CURRENT_PATH}/xml/hardcoding_file_no_match_path_invalid.json
+    assert_failure 1
+    assert_output --regexp "Path 'a.b.c' not valid for value 'hello, world' of 'Greeting' in file '.*/test.xml'"
 }
 
 @test "[xml] should return path not found output" {

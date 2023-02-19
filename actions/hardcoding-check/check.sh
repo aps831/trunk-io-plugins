@@ -78,16 +78,25 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
 
       if [[ ${yqlike} == true ]]; then
 
-        actual=$(yq "${valuePath}" <"${convertedFile}")
-        expected="${valuePrefix}${value}${valueSuffix}"
+        actual=$(yq "${valuePath}" <"${convertedFile}" 2>/dev/null)
 
-        if [[ ${actual} == "null" ]]; then
+        if [ $? != 0 ]; then
 
-          output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
+          output="${output}\nPath '${valuePath}' not valid for value '${value}' of '${description}' in file '${file}'"
 
-        elif ! [[ ${actual} =~ ${expected} ]]; then
+        else
 
-          output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
+          expected="${valuePrefix}${value}${valueSuffix}"
+
+          if [[ ${actual} == "null" ]]; then
+
+            output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
+
+          elif ! [[ ${actual} =~ ${expected} ]]; then
+
+            output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
+
+          fi
 
         fi
 
