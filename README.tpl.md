@@ -16,11 +16,12 @@ There are no linters defined.
 
 ## Enabling a supported action
 
-| Action        | Description                                    |
-| ------------- | ---------------------------------------------- |
-| commit-branch | Warn when committing to the 'master' branch    |
-| commitizen    | Ensure commit messages are correctly formatted |
+| Action           | Description                                                       |
+| ---------------- | ----------------------------------------------------------------- |
+| commit-branch    | Warn when committing to the 'master' branch                       |
+| commitizen       | Ensure commit messages are correctly formatted                    |
+| hardcoding-check | Check correctnes of hardcoded values defined in `hardcoding.json` |
 
 ```bash
-trunk actions enable {action}
+trunk actions enable ${action}
 ```
