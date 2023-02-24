@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": "test.bat",
+        "valuePath": "greeting"
+      },
+      {
+        "filePath": "test.bat",
+        "valuePath": "farewell"
+      }
+    ]
+  }
+]

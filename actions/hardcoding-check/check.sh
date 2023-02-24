@@ -119,7 +119,23 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
       # .sh
       elif [[ ${file} == *.sh ]]; then
 
-        actual=$(grep "${valuePath}" "${file}" | awk '{s=index($1,"=");print substr($1,s+2)}' | awk '{s=index($1,"\""); print substr($1,0,s-1)}')
+        actual=$(grep "^${valuePath}=" "${file}" | awk '{s=index($1,"=");print substr($1,s+2)}' | awk '{s=index($1,"\""); print substr($1,0,s-1)}')
+        expected="${valuePrefix}${value}${valueSuffix}"
+
+        if [[ ${actual} == "" ]]; then
+
+          output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
+
+        elif ! [[ ${actual} =~ ${expected} ]]; then
+
+          output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
+
+        fi
+
+      # .bat
+      elif [[ ${file} == *.bat ]]; then
+
+        actual=$(grep "^set ${valuePath}=" "${file}" | awk '{s=index($2,"=");print substr($2,s+2)}' | awk '{s=index($1,"\""); print substr($1,0,s-1)}')
         expected="${valuePrefix}${value}${valueSuffix}"
 
         if [[ ${actual} == "" ]]; then

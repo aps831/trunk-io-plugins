@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Farewell",
+    "value": "hel",
+    "files": [
+      {
+        "filePath": "test.bat",
+        "valuePath": "farewell",
+        "valueSuffix": "lo"
+      }
+    ]
+  }
+]
