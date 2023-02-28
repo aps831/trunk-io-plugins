@@ -1,0 +1,12 @@
+---
+version: 0.1
+actions:
+  definitions:
+    - id: commitlint-conventional
+      runtime: node
+      packages_file: package.json
+      run:
+        commitlint --config ${plugin}/actions/commitlint-conventional/commitlint.config.js --edit
+        ${1}
+      triggers:
+        - git_hooks: [commit-msg]
