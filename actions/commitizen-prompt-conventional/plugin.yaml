@@ -1,0 +1,11 @@
+---
+version: 0.1
+actions:
+  definitions:
+    - id: commitizen-prompt-conventional
+      runtime: node
+      packages_file: package.json
+      run: ${plugin}/actions/commitizen-prompt-conventional/run.sh "${@}"
+      interactive: true
+      triggers:
+        - git_hooks: [prepare-commit-msg]
