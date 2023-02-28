@@ -1,0 +1,12 @@
+version: 0.1
+actions:
+  definitions:
+    - id: commitizen-tools-check
+      display_name: Commitizen Tools Check
+      description: Check commit message
+      run: cz check --allow-abort --commit-msg-file ${1}
+      runtime: python
+      packages_file: requirements.txt
+      interactive: true
+      triggers:
+        - git_hooks: [commit-msg]
