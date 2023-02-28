@@ -23,6 +23,8 @@ There are no linters defined.
 | commitizen-tools-check | Ensure commit messages are correctly formatted                    |
 | hardcoding-check       | Check correctnes of hardcoded values defined in `hardcoding.json` |
 
+To add an action, run:
+
 ```bash
 trunk actions enable ${action}
 ```
