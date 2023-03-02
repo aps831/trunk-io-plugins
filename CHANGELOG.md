@@ -1,4 +1,18 @@
-## [](https://github.com/aps831/trunk-io-plugins/compare/v1.2.0...v) (2023-02-19)
+## [](https://github.com/aps831/trunk-io-plugins/compare/v2.0.0...v) (2023-03-02)
+
+## [2.0.0](https://github.com/aps831/trunk-io-plugins/compare/v1.2.0...v2.0.0) (2023-03-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove regex matching in hardcoding
+
+### Features
+
+* add bat file to hardcoding check ([41d5a12](https://github.com/aps831/trunk-io-plugins/commit/41d5a12034310cc22cf428c688f66866fb8f6ea9))
+* add commitizen prompt ([a51c153](https://github.com/aps831/trunk-io-plugins/commit/a51c153d5d9939fb1ed0bff73b27c5596febb906))
+* add commitizen tools check ([0c3f64a](https://github.com/aps831/trunk-io-plugins/commit/0c3f64a32303e9c7f268f9e39520c5ecdf5edfd7))
+* remove regex matching in hardcoding ([a8e0fa2](https://github.com/aps831/trunk-io-plugins/commit/a8e0fa253137284fc93a92595a9490b76bbcdc32))
 
 ## [1.2.0](https://github.com/aps831/trunk-io-plugins/compare/v1.1.0...v1.2.0) (2023-02-19)
 
