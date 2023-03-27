@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/itchyny/gojq v0.12.11
 	github.com/mikefarah/yq/v4 v4.30.8
-	github.com/santhosh-tekuri/jsonschema/cmd/jv v0.3.1
+	github.com/santhosh-tekuri/jsonschema/cmd/jv v0.4.0
 	github.com/tmccombs/hcl2json v0.3.6
 )
 
@@ -29,7 +29,7 @@ require (
 	github.com/mattn/go-runewidth v0.0.14 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
-	github.com/santhosh-tekuri/jsonschema/v5 v5.1.1 // indirect
+	github.com/santhosh-tekuri/jsonschema/v5 v5.2.0 // indirect
 	github.com/spf13/cobra v1.6.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/zclconf/go-cty v1.12.1 // indirect
@@ -38,6 +38,5 @@ require (
 	golang.org/x/text v0.4.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220609144429-65e65417b02f // indirect
 	gopkg.in/op/go-logging.v1 v1.0.0-20160211212156-b2cb9fa56473 // indirect
-	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
