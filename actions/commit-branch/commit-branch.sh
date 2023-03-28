@@ -10,7 +10,7 @@ if [[ ${branch} == "${protected_branch}" ]]; then
   read -r -p "Do you want to proceed? [Y/n] " RESPONSE
   RESPONSE="${RESPONSE:-Y}"
   case "${RESPONSE}" in
-  Y)
+  Y | y)
     echo "Continuing commit."
     exit 0
     ;;
