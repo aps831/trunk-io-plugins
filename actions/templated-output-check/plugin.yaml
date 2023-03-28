@@ -1,0 +1,11 @@
+---
+version: 0.1
+actions:
+  definitions:
+    - id: templated-output-check
+      display_name: Templated Output Check
+      description: Check for modification to templated output
+      run: ${plugin}/actions/templated-output-check/templated-output-check.sh
+      interactive: true
+      triggers:
+        - git_hooks: [pre-commit]
