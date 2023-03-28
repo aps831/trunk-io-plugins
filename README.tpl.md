@@ -30,6 +30,14 @@ To add an action, run:
 trunk actions enable ${action}
 ```
 
+For the **commitizen-prompt-conventional** action, a `.czrc` configuration file with contents
+
+```
+{ "path": "cz-conventional-changelog" }
+```
+
+is required.
+
 ## Tests
 
 To run bats tests: `bats -r test`
