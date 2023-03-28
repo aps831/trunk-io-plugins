@@ -11,4 +11,4 @@ jobs:
         with:
           submodules: true
       - name: run tests
-        run: .bats/bats/bin/bats bats -r test/
+        run: .bats/bats/bin/bats -r test/
