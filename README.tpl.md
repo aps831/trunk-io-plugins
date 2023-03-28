@@ -29,3 +29,7 @@ To add an action, run:
 ```bash
 trunk actions enable ${action}
 ```
+
+## Tests
+
+To run bats tests: `bats -r test`
