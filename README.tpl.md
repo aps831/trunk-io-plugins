@@ -33,7 +33,7 @@ trunk actions enable ${action}
 
 For the **commitizen-prompt-conventional** action, a `.czrc` configuration file with contents
 
-```
+```text
 { "path": "cz-conventional-changelog" }
 ```
 
