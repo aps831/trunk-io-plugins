@@ -11,15 +11,12 @@ if [[ ${branch} == "${protected_branch}" ]]; then
   RESPONSE="${RESPONSE:-Y}"
   case "${RESPONSE}" in
   Y | y)
-    echo "Continuing commit."
     exit 0
     ;;
   n)
-    echo "Abandoning commit."
     exit 1
     ;;
   *)
-    echo "Abandoning commit."
     exit 1
     ;;
   esac
