@@ -38,6 +38,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
     valuePath=$(echo "${inner}" | base64 --decode | gojq -r '.valuePath')
     valuePrefix=$(echo "${inner}" | base64 --decode | gojq -r '.valuePrefix')
     valueSuffix=$(echo "${inner}" | base64 --decode | gojq -r '.valueSuffix')
+    partialMatch=$(echo "${inner}" | base64 --decode | gojq -r '.partialMatch')
 
     if [[ ${valuePrefix} == "null" ]]; then
       valuePrefix=""
@@ -47,12 +48,17 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
       valueSuffix=""
     fi
 
+    if [[ ${partialMatch} == "null" ]]; then
+      partialMatch=false
+    fi
+
     if [[ ! -f ${file} ]]; then
 
       output="${output}\nFile '${file}' not found for value '${value}' of '${description}' at path '${valuePath}'"
 
     else
 
+      # Convert file
       if [[ ${file} == *.yml || ${file} == *.yaml || ${file} == *.json ]]; then
 
         convertedFile=${file}
@@ -92,7 +98,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
 
             output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
 
-          elif ! [[ ${actual} == "${expected}" ]]; then
+          elif [[ ${partialMatch} == false && ${actual} != "${expected}" || ${partialMatch} == true && ${actual} != *"${expected}"* ]]; then
 
             output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
 
@@ -110,7 +116,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
 
           output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
 
-        elif ! [[ ${actual} == "${expected}" ]]; then
+        elif [[ ${partialMatch} == false && ${actual} != "${expected}" || ${partialMatch} == true && ${actual} != *"${expected}"* ]]; then
 
           output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
 
@@ -126,7 +132,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
 
           output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
 
-        elif ! [[ ${actual} == "${expected}" ]]; then
+        elif [[ ${partialMatch} == false && ${actual} != "${expected}" || ${partialMatch} == true && ${actual} != *"${expected}"* ]]; then
 
           output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
 
@@ -142,7 +148,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
 
           output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
 
-        elif ! [[ ${actual} == "${expected}" ]]; then
+        elif [[ ${partialMatch} == false && ${actual} != "${expected}" || ${partialMatch} == true && ${actual} != *"${expected}"* ]]; then
 
           output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
 
@@ -158,7 +164,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
 
           output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
 
-        elif ! [[ ${actual} == "${expected}" ]]; then
+        elif [[ ${partialMatch} == false && ${actual} != "${expected}" || ${partialMatch} == true && ${actual} != *"${expected}"* ]]; then
 
           output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
 

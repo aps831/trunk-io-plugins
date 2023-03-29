@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hell",
+    "files": [
+      {
+        "filePath": "test.sh",
+        "valuePath": "greeting",
+        "partialMatch": true
+      }
+    ]
+  }
+]

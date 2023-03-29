@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Farewell",
+    "value": "hello, goodbye",
+    "files": [
+      {
+        "filePath": ".sdkmanrc",
+        "valuePath": "greeting",
+        "partialMatch": true
+      }
+    ]
+  }
+]

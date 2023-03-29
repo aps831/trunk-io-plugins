@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hell",
+    "files": [
+      {
+        "filePath": ".tool-versions",
+        "valuePath": "greeting",
+        "partialMatch": true
+      }
+    ]
+  }
+]

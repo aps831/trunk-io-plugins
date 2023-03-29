@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Farewell",
+    "value": "hello, goodbye, world",
+    "files": [
+      {
+        "filePath": "test.yml",
+        "valuePath": ".a.b.c",
+        "partialMatch": true
+      }
+    ]
+  }
+]

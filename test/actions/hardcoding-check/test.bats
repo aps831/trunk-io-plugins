@@ -78,6 +78,12 @@ setup() {
     assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/test.yaml' at path '.a.b.c'"
 }
 
+@test "[yaml] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/yaml/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'hello, goodbye, world' in file '.*/test.yaml' at path '.a.b.c'"
+}
+
 @test "[yaml] should return literal value with prefix not matched output" {
     run check.sh ${CURRENT_PATH}/yaml/hardcoding_file_path_match_value_with_prefix_no_match.json
     assert_failure 1
@@ -93,6 +99,12 @@ setup() {
 ## Value matched
 @test "[yaml] should return success output when matching path and literal value" {
     run check.sh ${CURRENT_PATH}/yaml/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[yaml] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/yaml/hardcoding_file_path_value_partial_match.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -154,6 +166,12 @@ setup() {
     assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/test.yml' at path '.a.b.c'"
 }
 
+@test "[yml] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/yml/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'hello, goodbye, world' in file '.*/test.yml' at path '.a.b.c'"
+}
+
 @test "[yml] should return literal value with prefix not matched output" {
     run check.sh ${CURRENT_PATH}/yml/hardcoding_file_path_match_value_with_prefix_no_match.json
     assert_failure 1
@@ -169,6 +187,12 @@ setup() {
 ## Value matched
 @test "[yml] should return success output when matching path and literal value" {
     run check.sh ${CURRENT_PATH}/yml/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[yml] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/yml/hardcoding_file_path_value_partial_match.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -230,6 +254,12 @@ setup() {
     assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/test.json' at path '.a.b.c'"
 }
 
+@test "[json] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/json/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'hello, goodbye, world' in file '.*/test.json' at path '.a.b.c'"
+}
+
 @test "[json] should return literal value with prefix not matched output" {
     run check.sh ${CURRENT_PATH}/json/hardcoding_file_path_match_value_with_prefix_no_match.json
     assert_failure 1
@@ -245,6 +275,12 @@ setup() {
 ## Value matched
 @test "[json] should return success output when matching path and literal value" {
     run check.sh ${CURRENT_PATH}/json/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[json] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/json/hardcoding_file_path_value_partial_match.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -306,6 +342,12 @@ setup() {
     assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/test.tf' at path '.a.b\[0\].c'"
 }
 
+@test "[tf] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/tf/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'hello, goodbye, world' in file '.*/test.tf' at path '.a.b\[0\].c'"
+}
+
 @test "[tf] should return literal value with prefix not matched output" {
     run check.sh ${CURRENT_PATH}/tf/hardcoding_file_path_match_value_with_prefix_no_match.json
     assert_failure 1
@@ -321,6 +363,12 @@ setup() {
 ## Value matched
 @test "[tf] should return success output when matching path and literal value" {
     run check.sh ${CURRENT_PATH}/tf/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[tf] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/tf/hardcoding_file_path_value_partial_match.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -382,6 +430,12 @@ setup() {
     assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/test.xml' at path '.root.a.b.c'"
 }
 
+@test "[xml] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/xml/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'hello, goodbye, world' in file '.*/test.xml' at path '.root.a.b.c'"
+}
+
 @test "[xml] should return literal value with prefix not matched output" {
     run check.sh ${CURRENT_PATH}/xml/hardcoding_file_path_match_value_with_prefix_no_match.json
     assert_failure 1
@@ -397,6 +451,12 @@ setup() {
 ## Value matched
 @test "[xml] should return success output when matching path and literal value" {
     run check.sh ${CURRENT_PATH}/xml/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[xml] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/xml/hardcoding_file_path_value_partial_match.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -452,6 +512,12 @@ setup() {
     assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'goodbye' in file '.*/\.tool-versions' at path 'greeting'"
 }
 
+@test "[tool-versions] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/tool-versions/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'goodbye' in file '.*/\.tool-versions' at path 'greeting'"
+}
+
 @test "[tool-versions] should return literal value with prefix not matched output" {
     run check.sh ${CURRENT_PATH}/tool-versions/hardcoding_file_path_match_value_with_prefix_no_match.json
     assert_failure 1
@@ -467,6 +533,12 @@ setup() {
 ## Value matched
 @test "[tool-versions] should return success output when matching path and literal value" {
     run check.sh ${CURRENT_PATH}/tool-versions/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[tool-versions] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/tool-versions/hardcoding_file_path_value_partial_match.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -522,6 +594,12 @@ setup() {
     assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'goodbye' in file '.*/test.sh' at path 'greeting'"
 }
 
+@test "[sh] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/sh/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'hello, goodbye' in file '.*/test.sh' at path 'greeting'"
+}
+
 @test "[sh] should return literal value with prefix not matched output" {
     run check.sh ${CURRENT_PATH}/sh/hardcoding_file_path_match_value_with_prefix_no_match.json
     assert_failure 1
@@ -537,6 +615,12 @@ setup() {
 ## Value matched
 @test "[sh] should return success output when matching path and literal value" {
     run check.sh ${CURRENT_PATH}/sh/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[sh] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/sh/hardcoding_file_path_value_partial_match.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -592,6 +676,12 @@ setup() {
     assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'goodbye' in file '.*/test.bat' at path 'greeting'"
 }
 
+@test "[bat] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/bat/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'hello, goodbye' in file '.*/test.bat' at path 'greeting'"
+}
+
 @test "[bat] should return literal value with prefix not matched output" {
     run check.sh ${CURRENT_PATH}/bat/hardcoding_file_path_match_value_with_prefix_no_match.json
     assert_failure 1
@@ -607,6 +697,12 @@ setup() {
 ## Value matched
 @test "[bat] should return success output when matching path and literal value" {
     run check.sh ${CURRENT_PATH}/bat/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[bat] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/bat/hardcoding_file_path_value_partial_match.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -662,6 +758,12 @@ setup() {
     assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'goodbye' in file '.*/\.sdkmanrc' at path 'greeting'"
 }
 
+@test "[sdkmanrc] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/sdkmanrc/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'hello, goodbye' in file '.*/\.sdkmanrc' at path 'greeting'"
+}
+
 @test "[sdkmanrc] should return literal value with prefix not matched output" {
     run check.sh ${CURRENT_PATH}/sdkmanrc/hardcoding_file_path_match_value_with_prefix_no_match.json
     assert_failure 1
@@ -677,6 +779,12 @@ setup() {
 ## Value matched
 @test "[sdkmanrc] should return success output when matching path and literal value" {
     run check.sh ${CURRENT_PATH}/sdkmanrc/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[sdkmanrc] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/sdkmanrc/hardcoding_file_path_value_partial_match.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }

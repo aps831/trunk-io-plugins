@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": "test.yml",
+        "valuePath": ".a.b.c",
+        "partialMatch": true
+      }
+    ]
+  }
+]

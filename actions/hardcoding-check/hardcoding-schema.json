@@ -28,6 +28,9 @@
                 },
                 "valueSuffix": {
                   "type": "string"
+                },
+                "partialMatch": {
+                  "type": "boolean"
                 }
               },
               "required": ["filePath", "valuePath"]

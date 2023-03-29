@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Farewell",
+    "value": "hello, goodbye, world",
+    "files": [
+      {
+        "filePath": "test.tf",
+        "valuePath": ".a.b[0].c",
+        "partialMatch": true
+      }
+    ]
+  }
+]
