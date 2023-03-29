@@ -24,6 +24,7 @@ There are no linters defined.
 | commitizen-tools-check         | Ensure commit messages are correctly formatted                     |
 | hardcoding-check               | Check correctness of hardcoded values defined in `hardcoding.json` |
 | templated-output-check         | Check for changes to files created from templates                  |
+| wip-check                      | Check for TODO and FIXME comments                                  |
 
 To add an action, run:
 

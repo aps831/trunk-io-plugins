@@ -1,0 +1,11 @@
+---
+version: 0.1
+actions:
+  definitions:
+    - id: wip-check
+      display_name: Work in Progress Check
+      description: Check for TODO and FIXME comments
+      run: ${plugin}/actions/wip-check/wip-check.sh
+      interactive: true
+      triggers:
+        - git_hooks: [pre-commit]
