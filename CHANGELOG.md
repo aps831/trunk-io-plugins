@@ -1,4 +1,28 @@
-## [](https://github.com/aps831/trunk-io-plugins/compare/v2.0.0...v) (2023-03-02)
+## [](https://github.com/aps831/trunk-io-plugins/compare/v2.1.0...v) (2023-03-29)
+
+## [2.1.0](https://github.com/aps831/trunk-io-plugins/compare/v2.0.0...v2.1.0) (2023-03-29)
+
+
+### Features
+
+* add dockerfile to hardcoding ([1ecc59d](https://github.com/aps831/trunk-io-plugins/commit/1ecc59da087e6ba39ce716c222a3b561bc518888))
+* add javascript and typescript to hardcoding ([3bed862](https://github.com/aps831/trunk-io-plugins/commit/3bed86250ae0ede0599564f6d351cc9ce08ee961))
+* add partial matching for hardcoding check ([f4f89ae](https://github.com/aps831/trunk-io-plugins/commit/f4f89aeed8861f8f7a38b561fde5fcca6f019f1f))
+* add templated output check ([f58df93](https://github.com/aps831/trunk-io-plugins/commit/f58df93b2dc8984c72a26ade2a1579cbb0719c40))
+* add wip check ([2f25d28](https://github.com/aps831/trunk-io-plugins/commit/2f25d282be571c4151562f01df51ebfc51a71aba))
+
+
+### Bug Fixes
+
+* allow y in commit branch ([89d226d](https://github.com/aps831/trunk-io-plugins/commit/89d226da709a901934891c17f40bd7952331c228))
+* remove colour from commit-branch ([8ca4af9](https://github.com/aps831/trunk-io-plugins/commit/8ca4af9204a973bebdf00aeef2f4987374d1ec9c))
+* remove feedback in commit branch ([aac348d](https://github.com/aps831/trunk-io-plugins/commit/aac348d65ed6140e01e31cc0b02e15f89c27b189))
+* standardise prompt in commit-branch ([d371ec1](https://github.com/aps831/trunk-io-plugins/commit/d371ec11a500e6bf9d21eb200b5d5a0f20c77787))
+
+
+### Reverts
+
+* remove codeql ([fa26ed0](https://github.com/aps831/trunk-io-plugins/commit/fa26ed0634e0a6c5d40e2d05cd00e26af31d6200))
 
 ## [2.0.0](https://github.com/aps831/trunk-io-plugins/compare/v1.2.0...v2.0.0) (2023-03-02)
 
