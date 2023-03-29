@@ -800,3 +800,167 @@ setup() {
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
+
+# js
+@test "[js] should check multiple blocks" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_match_value_no_match_multiple_blocks.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye' for 'Greeting' instead of 'hello' in file '.*/test.js' at path 'farewell'"
+}
+
+@test "[js] should check multiple files" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_match_value_no_match_multiple_files.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye' for 'Greeting' instead of 'hello' in file '.*/test.js' at path 'farewell'"
+}
+
+@test "[js] should return file not found output" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_no_match.json
+    assert_failure 1
+    assert_output --regexp "File '.*/missing.js' not found for value 'hello' of 'Greeting' at path 'greeting'"
+}
+
+@test "[js] should return path not found output" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_match_path_no_match.json
+    assert_failure 1
+    assert_output --regexp "Path 'missing' not found in file '.*/test.js' for value 'hello' of 'Greeting'"
+}
+
+@test "[js] should return multiple failures output" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_multiple_failures.json
+    assert_failure 1
+    assert_output --regexp "Path 'missing' not found in file '.*/test.js' for value 'hello' of 'Greeting'"
+    assert_output --regexp "Found value 'goodbye' for 'Greeting' instead of 'hello' in file '.*/test.js' at path 'farewell'"
+}
+
+## Value not matched
+@test "[js] should return literal value not matched output" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_match_value_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'goodbye' in file '.*/test.js' at path 'greeting'"
+}
+
+@test "[js] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'hello, goodbye' in file '.*/test.js' at path 'greeting'"
+}
+
+@test "[js] should return literal value with prefix not matched output" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_match_value_with_prefix_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye' for 'Farewell' instead of 'hello' in file '.*/test.js' at path 'farewell'"
+}
+
+@test "[js] should return literal value with suffix not matched output" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_match_value_with_suffix_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye' for 'Farewell' instead of 'hello' in file '.*/test.js' at path 'farewell'"
+}
+
+## Value matched
+@test "[js] should return success output when matching path and literal value" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[js] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_value_partial_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[js] should return success output when matching path and literal value with prefix" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_value_with_prefix_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[js] should return success output when matching path and literal value with suffix" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_value_with_suffix_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+# ts
+@test "[ts] should check multiple blocks" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_match_value_no_match_multiple_blocks.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye' for 'Greeting' instead of 'hello' in file '.*/test.ts' at path 'farewell'"
+}
+
+@test "[ts] should check multiple files" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_match_value_no_match_multiple_files.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye' for 'Greeting' instead of 'hello' in file '.*/test.ts' at path 'farewell'"
+}
+
+@test "[ts] should return file not found output" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_no_match.json
+    assert_failure 1
+    assert_output --regexp "File '.*/missing.ts' not found for value 'hello' of 'Greeting' at path 'greeting'"
+}
+
+@test "[ts] should return path not found output" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_match_path_no_match.json
+    assert_failure 1
+    assert_output --regexp "Path 'missing' not found in file '.*/test.ts' for value 'hello' of 'Greeting'"
+}
+
+@test "[ts] should return multiple failures output" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_multiple_failures.json
+    assert_failure 1
+    assert_output --regexp "Path 'missing' not found in file '.*/test.ts' for value 'hello' of 'Greeting'"
+    assert_output --regexp "Found value 'goodbye' for 'Greeting' instead of 'hello' in file '.*/test.ts' at path 'farewell'"
+}
+
+## Value not matched
+@test "[ts] should return literal value not matched output" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_match_value_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'goodbye' in file '.*/test.ts' at path 'greeting'"
+}
+
+@test "[ts] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello' for 'Farewell' instead of 'hello, goodbye' in file '.*/test.ts' at path 'greeting'"
+}
+
+@test "[ts] should return literal value with prefix not matched output" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_match_value_with_prefix_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye' for 'Farewell' instead of 'hello' in file '.*/test.ts' at path 'farewell'"
+}
+
+@test "[ts] should return literal value with suffix not matched output" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_match_value_with_suffix_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye' for 'Farewell' instead of 'hello' in file '.*/test.ts' at path 'farewell'"
+}
+
+## Value matched
+@test "[ts] should return success output when matching path and literal value" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[ts] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_value_partial_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[ts] should return success output when matching path and literal value with prefix" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_value_with_prefix_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[ts] should return success output when matching path and literal value with suffix" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_value_with_suffix_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}

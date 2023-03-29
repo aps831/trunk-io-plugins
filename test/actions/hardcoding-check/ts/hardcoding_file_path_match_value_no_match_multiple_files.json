@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": "test.ts",
+        "valuePath": "greeting"
+      },
+      {
+        "filePath": "test.ts",
+        "valuePath": "farewell"
+      }
+    ]
+  }
+]

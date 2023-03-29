@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": "test.js",
+        "valuePath": "missing"
+      },
+      {
+        "filePath": "test.js",
+        "valuePath": "farewell"
+      }
+    ]
+  }
+]

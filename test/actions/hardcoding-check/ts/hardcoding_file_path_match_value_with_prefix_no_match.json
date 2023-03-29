@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Farewell",
+    "value": "lo",
+    "files": [
+      {
+        "filePath": "test.ts",
+        "valuePath": "farewell",
+        "valuePrefix": "hel"
+      }
+    ]
+  }
+]

@@ -154,6 +154,22 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
 
         fi
 
+      # .js .ts
+      elif [[ ${file} == *.js || ${file} == *.ts ]]; then
+
+        actual=$(grep "^const ${valuePath} = " "${file}" | awk '{s=index($0,"=");print substr($0,s+3)}' | awk '{s=index($1,"\""); print substr($1,0,s-1)}')
+        expected="${valuePrefix}${value}${valueSuffix}"
+
+        if [[ ${actual} == "" ]]; then
+
+          output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
+
+        elif [[ ${partialMatch} == false && ${actual} != "${expected}" || ${partialMatch} == true && ${actual} != *"${expected}"* ]]; then
+
+          output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
+
+        fi
+
       # .sdkmanrc
       elif [[ ${file} == *.sdkmanrc ]]; then
 
