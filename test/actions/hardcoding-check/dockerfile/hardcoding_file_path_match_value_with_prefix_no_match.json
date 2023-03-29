@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Farewell",
+    "value": "world",
+    "files": [
+      {
+        "filePath": "Dockerfile",
+        "valuePath": ".FROM[0]",
+        "valuePrefix": "goodbye, "
+      }
+    ]
+  }
+]

@@ -186,6 +186,37 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
 
         fi
 
+      # Dockerfile
+      elif [[ ${file} == *Dockerfile* ]]; then
+
+        term=${valuePath%[*}
+        term=${term#*.}
+        index=${valuePath#*[}
+        index=${index%]*}
+
+        re='^[0-9]+$'
+        if ! [[ $index =~ $re ]]; then
+
+          output="${output}\nPath '${valuePath}' not valid for value '${value}' of '${description}' in file '${file}'"
+
+        else
+
+          index=$((index + 1))
+          actual=$(grep "${term}" "${file}" | awk '{$1=""}1' | awk '{$1=$1}1' | awk "{i++}i==$index")
+          expected="${valuePrefix}${value}${valueSuffix}"
+
+          if [[ ${actual} == "" ]]; then
+
+            output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
+
+          elif [[ ${partialMatch} == false && ${actual} != "${expected}" || ${partialMatch} == true && ${actual} != *"${expected}"* ]]; then
+
+            output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
+
+          fi
+
+        fi
+
       else
 
         output="${output}\nFile type '${file}' not supported"

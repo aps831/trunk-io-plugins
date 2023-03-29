@@ -964,3 +964,97 @@ setup() {
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
+
+# Dockerfile
+@test "[dockerfile] should check multiple blocks" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_path_match_value_no_match_multiple_blocks.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye, world' for 'Greeting' instead of 'hello, world' in file '.*/Dockerfile' at path '\.FROM\[1\]'"
+}
+
+@test "[dockerfile] should check multiple files" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_path_match_value_no_match_multiple_files.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye, world' for 'Greeting' instead of 'hello, world' in file '.*/Dockerfile' at path '\.FROM\[1\]'"
+}
+
+@test "[dockerfile] should return file not found output" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_no_match.json
+    assert_failure 1
+    assert_output --regexp "File '.*/Missing' not found for value 'hello, world' of 'Greeting' at path '\.FROM\[0\]'"
+}
+
+@test "[dockerfile] should return path invalid output" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_no_match_path_invalid.json
+    assert_failure 1
+    assert_output --regexp "Path '\.ARG' not valid for value 'hello, world' of 'Greeting' in file '.*/Dockerfile'"
+}
+
+@test "[dockerfile] should return path not found output" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_match_path_no_match.json
+    assert_failure 1
+    assert_output --regexp "Path '\.ARG\[0\]' not found in file '.*/Dockerfile' for value 'hello, world' of 'Greeting'"
+}
+
+@test "[dockerfile] should return multiple failures output" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_multiple_failures.json
+    assert_failure 1
+    assert_output --regexp "Path '\.ARG\[0\]' not found in file '.*/Dockerfile' for value 'hello, world' of 'Greeting'"
+    assert_output --regexp "Found value 'goodbye, world' for 'Greeting' instead of 'hello, world' in file '.*/Dockerfile' at path '\.FROM\[1\]'"
+}
+
+## Value not matched
+@test "[dockerfile] should return literal value not matched output" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_path_match_value_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/Dockerfile' at path '\.FROM\[0\]'"
+}
+
+@test "[dockerfile] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'hello, goodbye, world' in file '.*/Dockerfile' at path '\.FROM\[0\]'"
+}
+
+@test "[dockerfile] should return literal value with prefix not matched output" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_path_match_value_with_prefix_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/Dockerfile' at path '\.FROM\[0\]'"
+}
+
+@test "[dockerfile] should return literal value with suffix not matched output" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_path_match_value_with_suffix_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/Dockerfile' at path '\.FROM\[0\]'"
+}
+
+## Value matched
+@test "[dockerfile] should return success output when matching path and literal value" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[dockerfile] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_path_value_partial_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[dockerfile] should return success output when matching extended filename path and literal value" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_extended_path_value_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[dockerfile] should return success output when matching path and literal value with prefix" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_path_value_with_prefix_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[dockerfile] should return success output when matching path and literal value with suffix" {
+    run check.sh ${CURRENT_PATH}/dockerfile/hardcoding_file_path_value_with_suffix_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "Dockerfile",
+        "valuePath": ".ARG[0]"
+      },
+      {
+        "filePath": "Dockerfile",
+        "valuePath": ".FROM[1]"
+      }
+    ]
+  }
+]
