@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/itchyny/gojq v0.12.12
-	github.com/mikefarah/yq/v4 v4.33.1
+	github.com/mikefarah/yq/v4 v4.33.2
 	github.com/santhosh-tekuri/jsonschema/cmd/jv v0.4.0
 	github.com/tmccombs/hcl2json v0.5.0
 )
@@ -12,13 +12,13 @@ require (
 require (
 	github.com/a8m/envsubst v1.4.2 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
-	github.com/alecthomas/participle/v2 v2.0.0-beta.5 // indirect
+	github.com/alecthomas/participle/v2 v2.0.0 // indirect
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
 	github.com/dimchansky/utfbom v1.1.1 // indirect
 	github.com/elliotchance/orderedmap v1.5.0 // indirect
 	github.com/fatih/color v1.15.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
-	github.com/goccy/go-yaml v1.10.0 // indirect
+	github.com/goccy/go-yaml v1.10.1 // indirect
 	github.com/hashicorp/hcl/v2 v2.16.1 // indirect
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
 	github.com/itchyny/timefmt-go v0.1.5 // indirect
@@ -28,7 +28,7 @@ require (
 	github.com/mattn/go-isatty v0.0.17 // indirect
 	github.com/mattn/go-runewidth v0.0.14 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
-	github.com/pelletier/go-toml/v2 v2.0.6 // indirect
+	github.com/pelletier/go-toml/v2 v2.0.7 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/santhosh-tekuri/jsonschema/v5 v5.2.0 // indirect
 	github.com/spf13/cobra v1.6.1 // indirect
