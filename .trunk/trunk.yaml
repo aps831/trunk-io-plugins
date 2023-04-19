@@ -10,13 +10,15 @@ plugins:
       ref: v0.0.16
       uri: https://github.com/trunk-io/plugins
 lint:
+  disabled:
+    - terraform-validate
   enabled:
+    - trivy@0.38.3
     - tflint@0.46.0
     - hadolint@2.12.0
     - gofmt@1.19.3
     - golangci-lint@1.52.2
     - yamllint@1.30.0
-    - trivy
     - semgrep@1.18.0
     - prettier@2.8.7
     - gitleaks@8.16.2
@@ -31,9 +33,14 @@ runtimes:
     - go@1.19.5
     - node@18.12.1
 actions:
-  enabled:
-    - commit-branch
+  disabled:
     - commitizen
+  enabled:
+    - wip-check
+    - templated-output-check
+    - commitizen-prompt-conventional
+    - commitizen-tools-check
+    - commit-branch
     - trunk-announce
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
