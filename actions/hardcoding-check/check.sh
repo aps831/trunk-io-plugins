@@ -67,7 +67,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
       elif [[ ${file} == *.xml ]]; then
 
         convertedFile=$(mktemp)
-        yq -p=xml '.' "${file}" >"${convertedFile}"
+        yq -p=xml -o=yaml '.' "${file}" >"${convertedFile}"
         yqlike=true
 
       elif [[ ${file} == *.tf ]]; then
