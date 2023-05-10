@@ -11,14 +11,14 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 # Check for hardcoding.json
 if [[ ! -f ${CONFIG_FILE} ]]; then
-  echo "${RED}Ignoring hardcoding check as '$(basename "${CONFIG_FILE}")' not found${RESET}"
+  echo -e "${RED}Ignoring hardcoding check as '$(basename "${CONFIG_FILE}")' not found${RESET}"
   exit 0
 fi
 
 # Check hardcoding schema
 jv -assertcontent -assertformat "${SCRIPT_DIR}/hardcoding-schema.json" "${CONFIG_FILE}" &>/dev/null
 if [[ $? == 1 ]]; then
-  echo "${RED}Hardcoding check failed: '$(basename "${CONFIG_FILE}")' is not valid${RESET}"
+  echo -e "${RED}Hardcoding check failed: '$(basename "${CONFIG_FILE}")' is not valid${RESET}"
   exit 1
 fi
 

@@ -1,5 +1,7 @@
 #! /bin/bash
 
+RESET='\033[0m'
+
 is_templated() {
   file="$1"
   directory=$(dirname "${file}")
@@ -22,7 +24,7 @@ diffs=$(git diff --name-only --cached)
 templates=$(echo "${diffs}" | filter is_templated)
 
 if [[ -n ${templates} ]]; then
-  echo "The following file(s) have been modified but are derived from templates:"
+  echo -e "${RESET}The following file(s) have been modified but are derived from templates:"
   echo "${templates}"
   read -r -p "Do you wish to continue? [yN] " RESPONSE
   RESPONSE="${RESPONSE:-N}"
