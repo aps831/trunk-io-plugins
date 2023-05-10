@@ -1,4 +1,12 @@
-## [](https://github.com/aps831/trunk-io-plugins/compare/v2.1.0...v) (2023-03-29)
+## [](https://github.com/aps831/trunk-io-plugins/compare/v2.1.1...v) (2023-05-10)
+
+### [2.1.1](https://github.com/aps831/trunk-io-plugins/compare/v2.1.0...v2.1.1) (2023-05-10)
+
+
+### Bug Fixes
+
+* prevent yq warning ([4ed283a](https://github.com/aps831/trunk-io-plugins/commit/4ed283ab6c4b85af919a17004e876ca8bf5df119))
+* tidy up colour output ([775e0d4](https://github.com/aps831/trunk-io-plugins/commit/775e0d4ef463b85881919117a0bff7c3bedc8ad3))
 
 ## [2.1.0](https://github.com/aps831/trunk-io-plugins/compare/v2.0.0...v2.1.0) (2023-03-29)
 
