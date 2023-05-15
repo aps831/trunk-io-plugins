@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/itchyny/gojq v0.12.12
 	github.com/mikefarah/yq/v4 v4.33.1
-	github.com/santhosh-tekuri/jsonschema/cmd/jv v0.4.0
+	github.com/santhosh-tekuri/jsonschema/cmd/jv v0.5.0
 	github.com/tmccombs/hcl2json v0.5.0
 )
 
@@ -30,7 +30,7 @@ require (
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.6 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
-	github.com/santhosh-tekuri/jsonschema/v5 v5.2.0 // indirect
+	github.com/santhosh-tekuri/jsonschema/v5 v5.3.0 // indirect
 	github.com/spf13/cobra v1.6.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/zclconf/go-cty v1.13.0 // indirect
