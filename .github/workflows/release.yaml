@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # pin@v3.1.0
         with:
           submodules: true
       - name: run tests
@@ -19,6 +19,6 @@ jobs:
     needs: test
     permissions:
       contents: write
-    uses: aps831/workflows/.github/workflows/release.yaml@master
+    uses: aps831/workflows/.github/workflows/release.yaml@f98edcf8f4289fe52db780d9757dfe01cecfe630 # pin@master
     secrets:
       ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
