@@ -6,7 +6,7 @@ require (
 	github.com/itchyny/gojq v0.12.12
 	github.com/mikefarah/yq/v4 v4.33.1
 	github.com/santhosh-tekuri/jsonschema/cmd/jv v0.4.0
-	github.com/tmccombs/hcl2json v0.5.0
+	github.com/tmccombs/hcl2json v0.6.0
 )
 
 require (
@@ -19,7 +19,7 @@ require (
 	github.com/fatih/color v1.15.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/goccy/go-yaml v1.10.0 // indirect
-	github.com/hashicorp/hcl/v2 v2.16.1 // indirect
+	github.com/hashicorp/hcl/v2 v2.17.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
 	github.com/itchyny/timefmt-go v0.1.5 // indirect
 	github.com/jinzhu/copier v0.3.5 // indirect
@@ -33,7 +33,7 @@ require (
 	github.com/santhosh-tekuri/jsonschema/v5 v5.2.0 // indirect
 	github.com/spf13/cobra v1.6.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
-	github.com/zclconf/go-cty v1.13.0 // indirect
+	github.com/zclconf/go-cty v1.13.2 // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/text v0.8.0 // indirect
