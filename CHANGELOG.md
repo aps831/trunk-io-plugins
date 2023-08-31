@@ -1,4 +1,11 @@
-## [](https://github.com/aps831/trunk-io-plugins/compare/v2.1.2...v) (2023-08-30)
+## [](https://github.com/aps831/trunk-io-plugins/compare/v2.1.3...v) (2023-08-31)
+
+### [2.1.3](https://github.com/aps831/trunk-io-plugins/compare/v2.1.2...v2.1.3) (2023-08-31)
+
+
+### Bug Fixes
+
+* revert go version upgrade ([2fe4794](https://github.com/aps831/trunk-io-plugins/commit/2fe479486d4fc2bcc25942c39067e287b7212c52))
 
 ### [2.1.2](https://github.com/aps831/trunk-io-plugins/compare/v2.1.1...v2.1.2) (2023-08-30)
 
