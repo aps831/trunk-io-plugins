@@ -1,4 +1,11 @@
-## [](https://github.com/aps831/trunk-io-plugins/compare/v2.1.3...v) (2023-08-31)
+## [](https://github.com/aps831/trunk-io-plugins/compare/v2.1.4...v) (2023-09-03)
+
+### [2.1.4](https://github.com/aps831/trunk-io-plugins/compare/v2.1.3...v2.1.4) (2023-09-03)
+
+
+### Bug Fixes
+
+* test for commitizen config ([791adfc](https://github.com/aps831/trunk-io-plugins/commit/791adfce4d181d80d86b4e8b45d4ac1cfe1d3dbe))
 
 ### [2.1.3](https://github.com/aps831/trunk-io-plugins/compare/v2.1.2...v2.1.3) (2023-08-31)
 
