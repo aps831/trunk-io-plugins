@@ -1,4 +1,11 @@
-## [](https://github.com/aps831/trunk-io-plugins/compare/v2.1.4...v) (2023-09-03)
+## [](https://github.com/aps831/trunk-io-plugins/compare/v2.1.5...v) (2023-12-01)
+
+### [2.1.5](https://github.com/aps831/trunk-io-plugins/compare/v2.1.4...v2.1.5) (2023-12-01)
+
+
+### Bug Fixes
+
+* use multiline script for hardcoding-check ([5beba4c](https://github.com/aps831/trunk-io-plugins/commit/5beba4c0ed355aabbe464f19dca009e9b1452765))
 
 ### [2.1.4](https://github.com/aps831/trunk-io-plugins/compare/v2.1.3...v2.1.4) (2023-09-03)
 
