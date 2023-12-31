@@ -97,8 +97,14 @@ setup() {
 }
 
 ## Value matched
-@test "[yaml] should return success output when matching path and literal value" {
-    run check.sh ${CURRENT_PATH}/yaml/hardcoding_file_path_value_match.json
+@test "[yaml] should return success output when matching path and literal string value" {
+    run check.sh ${CURRENT_PATH}/yaml/hardcoding_file_path_value_match_string.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[yaml] should return success output when matching path and literal numeric value" {
+    run check.sh ${CURRENT_PATH}/yaml/hardcoding_file_path_value_match_numeric.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -185,8 +191,14 @@ setup() {
 }
 
 ## Value matched
-@test "[yml] should return success output when matching path and literal value" {
-    run check.sh ${CURRENT_PATH}/yml/hardcoding_file_path_value_match.json
+@test "[yml] should return success output when matching path and literal string value" {
+    run check.sh ${CURRENT_PATH}/yml/hardcoding_file_path_value_match_string.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[yml] should return success output when matching path and literal numeric value" {
+    run check.sh ${CURRENT_PATH}/yml/hardcoding_file_path_value_match_numeric.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -273,8 +285,14 @@ setup() {
 }
 
 ## Value matched
-@test "[json] should return success output when matching path and literal value" {
-    run check.sh ${CURRENT_PATH}/json/hardcoding_file_path_value_match.json
+@test "[json] should return success output when matching path and literal string value" {
+    run check.sh ${CURRENT_PATH}/json/hardcoding_file_path_value_match_string.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[json] should return success output when matching path and literal numeric value" {
+    run check.sh ${CURRENT_PATH}/json/hardcoding_file_path_value_match_numeric.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -361,8 +379,14 @@ setup() {
 }
 
 ## Value matched
-@test "[tf] should return success output when matching path and literal value" {
-    run check.sh ${CURRENT_PATH}/tf/hardcoding_file_path_value_match.json
+@test "[tf] should return success output when matching path and literal string value" {
+    run check.sh ${CURRENT_PATH}/tf/hardcoding_file_path_value_match_string.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[tf] should return success output when matching path and literal numeric value" {
+    run check.sh ${CURRENT_PATH}/tf/hardcoding_file_path_value_match_numeric.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -449,8 +473,14 @@ setup() {
 }
 
 ## Value matched
-@test "[xml] should return success output when matching path and literal value" {
-    run check.sh ${CURRENT_PATH}/xml/hardcoding_file_path_value_match.json
+@test "[xml] should return success output when matching path and literal string value" {
+    run check.sh ${CURRENT_PATH}/xml/hardcoding_file_path_value_match_string.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[xml] should return success output when matching path and literal numeric value" {
+    run check.sh ${CURRENT_PATH}/xml/hardcoding_file_path_value_match_numeric.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -613,8 +643,14 @@ setup() {
 }
 
 ## Value matched
-@test "[sh] should return success output when matching path and literal value" {
-    run check.sh ${CURRENT_PATH}/sh/hardcoding_file_path_value_match.json
+@test "[sh] should return success output when matching path and literal string value" {
+    run check.sh ${CURRENT_PATH}/sh/hardcoding_file_path_value_match_string.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[sh] should return success output when matching path and literal numeric value" {
+    run check.sh ${CURRENT_PATH}/sh/hardcoding_file_path_value_match_numeric.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -695,8 +731,14 @@ setup() {
 }
 
 ## Value matched
-@test "[bat] should return success output when matching path and literal value" {
-    run check.sh ${CURRENT_PATH}/bat/hardcoding_file_path_value_match.json
+@test "[bat] should return success output when matching path and literal string value" {
+    run check.sh ${CURRENT_PATH}/bat/hardcoding_file_path_value_match_string.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[bat] should return success output when matching path and literal numeric value" {
+    run check.sh ${CURRENT_PATH}/bat/hardcoding_file_path_value_match_numeric.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -859,8 +901,14 @@ setup() {
 }
 
 ## Value matched
-@test "[js] should return success output when matching path and literal value" {
-    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_value_match.json
+@test "[js] should return success output when matching path and literal string value" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_value_match_string.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[js] should return success output when matching path and literal numeric value" {
+    run check.sh ${CURRENT_PATH}/js/hardcoding_file_path_value_match_numeric.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }
@@ -941,8 +989,14 @@ setup() {
 }
 
 ## Value matched
-@test "[ts] should return success output when matching path and literal value" {
-    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_value_match.json
+@test "[ts] should return success output when matching path and literal string value" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_value_match_string.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[ts] should return success output when matching path and literal numeric value" {
+    run check.sh ${CURRENT_PATH}/ts/hardcoding_file_path_value_match_numeric.json
     assert_success
     assert_output --partial "Hardcoding check: successful!"
 }

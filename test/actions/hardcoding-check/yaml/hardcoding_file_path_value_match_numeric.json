@@ -1,0 +1,12 @@
+[
+  {
+    "description": "Greeting",
+    "value": 42,
+    "files": [
+      {
+        "filePath": "test-numeric.yaml",
+        "valuePath": ".a.b.c"
+      }
+    ]
+  }
+]

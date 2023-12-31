@@ -125,7 +125,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
       # .sh
       elif [[ ${file} == *.sh ]]; then
 
-        actual=$(grep "^${valuePath}=" "${file}" | awk '{s=index($1,"=");print substr($1,s+2)}' | awk '{s=index($1,"\""); print substr($1,0,s-1)}')
+        actual=$(grep "^${valuePath}=" "${file}" | awk '{s=index($0,"=");print substr($0,s+1)}' | sed -e 's/^\s*"*//' -e 's/"*;*\s*$//')
         expected="${valuePrefix}${value}${valueSuffix}"
 
         if [[ ${actual} == "" ]]; then
@@ -141,7 +141,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
       # .bat
       elif [[ ${file} == *.bat ]]; then
 
-        actual=$(grep "^set ${valuePath}=" "${file}" | awk '{s=index($2,"=");print substr($2,s+2)}' | awk '{s=index($1,"\""); print substr($1,0,s-1)}')
+        actual=$(grep "^set ${valuePath}=" "${file}" | awk '{s=index($0,"=");print substr($0,s+1)}' | sed -e 's/^\s*"*//' -e 's/"*;*\s*$//')
         expected="${valuePrefix}${value}${valueSuffix}"
 
         if [[ ${actual} == "" ]]; then
@@ -157,7 +157,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
       # .js .ts
       elif [[ ${file} == *.js || ${file} == *.ts ]]; then
 
-        actual=$(grep "^const ${valuePath} = " "${file}" | awk '{s=index($0,"=");print substr($0,s+3)}' | awk '{s=index($1,"\""); print substr($1,0,s-1)}')
+        actual=$(grep "^const ${valuePath} = " "${file}" | awk '{s=index($0,"=");print substr($0,s+2)}' | sed -e 's/^\s*"*//' -e 's/"*;*\s*$//')
         expected="${valuePrefix}${value}${valueSuffix}"
 
         if [[ ${actual} == "" ]]; then
