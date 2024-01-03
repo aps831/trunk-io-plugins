@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": "test.tfvars",
+        "valuePath": "missing"
+      },
+      {
+        "filePath": "test.tfvars",
+        "valuePath": "farewell"
+      }
+    ]
+  }
+]

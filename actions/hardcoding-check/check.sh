@@ -138,6 +138,22 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
 
         fi
 
+      # .tfvars
+      elif [[ ${file} == *.tfvars ]]; then
+
+        actual=$(grep "^${valuePath} = " "${file}" | awk '{s=index($0,"=");print substr($0,s+2)}' | sed -e 's/^\s*"*//' -e 's/"*;*\s*$//')
+        expected="${valuePrefix}${value}${valueSuffix}"
+
+        if [[ ${actual} == "" ]]; then
+
+          output="${output}\nPath '${valuePath}' not found in file '${file}' for value '${value}' of '${description}'"
+
+        elif [[ ${partialMatch} == false && ${actual} != "${expected}" || ${partialMatch} == true && ${actual} != *"${expected}"* ]]; then
+
+          output="${output}\nFound value '${actual}' for '${description}' instead of '${expected}' in file '${file}' at path '${valuePath}'"
+
+        fi
+
       # .bat
       elif [[ ${file} == *.bat ]]; then
 

@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Farewell",
+    "value": "hel",
+    "files": [
+      {
+        "filePath": "test.tfvars",
+        "valuePath": "farewell",
+        "valueSuffix": "lo"
+      }
+    ]
+  }
+]
