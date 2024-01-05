@@ -141,7 +141,7 @@ for outer in $(cat "${CONFIG_FILE}" | gojq -r '.[] | @base64'); do
       # .tfvars
       elif [[ ${file} == *.tfvars ]]; then
 
-        actual=$(grep "^${valuePath} = " "${file}" | awk '{s=index($0,"=");print substr($0,s+2)}' | sed -e 's/^\s*"*//' -e 's/"*;*\s*$//')
+        actual=$(grep "^${valuePath}\s*= " "${file}" | awk '{s=index($0,"=");print substr($0,s+2)}' | sed -e 's/^\s*"*//' -e 's/"*;*\s*$//')
         expected="${valuePrefix}${value}${valueSuffix}"
 
         if [[ ${actual} == "" ]]; then

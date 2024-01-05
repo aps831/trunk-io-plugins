@@ -1,2 +1,2 @@
-greeting = 42
-farewell = 0
+greeting    = 42
+farewell    = 0

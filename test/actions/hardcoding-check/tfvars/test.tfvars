@@ -1,2 +1,2 @@
-greeting = "hello"
-farewell = "goodbye"
+greeting    = "hello"
+farewell    = "goodbye"
