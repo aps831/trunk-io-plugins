@@ -7,7 +7,7 @@ This repository defines plugins for use with [trunk](https://trunk.io/).
 To add the plugin repository run:
 
 ```bash
-trunk plugins add --id aps831 https://github.com/aps831/trunk-io-plugins v2.2.0
+trunk plugins add --id aps831 https://github.com/aps831/trunk-io-plugins v2.2.1
 ```
 
 ## Enabling a supported linter

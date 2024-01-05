@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.1] - 2024-01-05
+
+### Bug Fixes
+
+- Allow for additional space in tfvars file
+
 ## [2.2.0] - 2024-01-03
 
 ### Features
@@ -13,6 +19,7 @@ All notable changes to this project will be documented in this file.
 
 - Add tap directory to gitignore
 - Replace release workflow with publish workflow
+- Update for v2.2.0 release [skip ci]
 
 ## [2.1.5] - 2023-12-01
 
