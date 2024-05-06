@@ -6,7 +6,7 @@ require (
 	github.com/itchyny/gojq v0.12.15
 	github.com/mikefarah/yq/v4 v4.43.1
 	github.com/santhosh-tekuri/jsonschema/cmd/jv v0.6.0
-	github.com/tmccombs/hcl2json v0.6.2
+	github.com/tmccombs/hcl2json v0.6.3
 )
 
 require (
