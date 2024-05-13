@@ -4,9 +4,9 @@ go 1.22.2
 
 require (
 	github.com/itchyny/gojq v0.12.15
-	github.com/mikefarah/yq/v4 v4.43.1
+	github.com/mikefarah/yq/v4 v4.44.1
 	github.com/santhosh-tekuri/jsonschema/cmd/jv v0.6.0
-	github.com/tmccombs/hcl2json v0.6.2
+	github.com/tmccombs/hcl2json v0.6.3
 )
 
 require (
@@ -28,7 +28,7 @@ require (
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
-	github.com/pelletier/go-toml/v2 v2.2.1 // indirect
+	github.com/pelletier/go-toml/v2 v2.2.2 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/santhosh-tekuri/jsonschema/v5 v5.3.1 // indirect
 	github.com/spf13/cobra v1.8.0 // indirect
@@ -38,7 +38,7 @@ require (
 	golang.org/x/mod v0.8.0 // indirect
 	golang.org/x/net v0.24.0 // indirect
 	golang.org/x/sys v0.19.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/text v0.15.0 // indirect
 	golang.org/x/tools v0.6.0 // indirect
 	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 	gopkg.in/op/go-logging.v1 v1.0.0-20160211212156-b2cb9fa56473 // indirect
