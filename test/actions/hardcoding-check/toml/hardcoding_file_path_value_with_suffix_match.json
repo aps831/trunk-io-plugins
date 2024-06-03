@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello",
+    "files": [
+      {
+        "filePath": "test.toml",
+        "valuePath": ".a.b.c",
+        "valueSuffix": ", world"
+      }
+    ]
+  }
+]

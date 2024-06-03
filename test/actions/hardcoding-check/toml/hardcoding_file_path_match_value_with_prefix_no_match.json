@@ -1,0 +1,13 @@
+[
+  {
+    "description": "Farewell",
+    "value": "world",
+    "files": [
+      {
+        "filePath": "test.toml",
+        "valuePath": ".a.b.c",
+        "valuePrefix": "goodbye, "
+      }
+    ]
+  }
+]

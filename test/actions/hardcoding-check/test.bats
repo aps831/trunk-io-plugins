@@ -315,6 +315,100 @@ setup() {
     assert_output --partial "Hardcoding check: successful!"
 }
 
+# TOML
+@test "[toml] should check multiple blocks" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_match_value_no_match_multiple_blocks.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye, world' for 'Greeting' instead of 'hello, world' in file '.*/test.toml' at path '.d.e.f'"
+}
+
+@test "[toml] should check multiple files" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_match_value_no_match_multiple_files.json
+    assert_failure 1
+    assert_output --regexp "Found value 'goodbye, world' for 'Greeting' instead of 'hello, world' in file '.*/test.toml' at path '.d.e.f'"
+}
+
+@test "[toml] should return file not found output" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_no_match.json
+    assert_failure 1
+    assert_output --regexp "File '.*/missing.toml' not found for value 'hello, world' of 'Greeting' at path '.a.b.c'"
+}
+
+@test "[toml] should return path invalid output" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_no_match_path_invalid.json
+    assert_failure 1
+    assert_output --regexp "Path 'a.b.c' not valid for value 'hello, world' of 'Greeting' in file '.*/test.toml'"
+}
+
+@test "[toml] should return path not found output" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_match_path_no_match.json
+    assert_failure 1
+    assert_output --regexp "Path '.a.b.missing' not found in file '.*/test.toml' for value 'hello, world' of 'Greeting'"
+}
+
+@test "[toml] should return multiple failures output" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_multiple_failures.json
+    assert_failure 1
+    assert_output --regexp "Path '.a.b.missing' not found in file '.*/test.toml' for value 'hello, world' of 'Greeting'"
+    assert_output --regexp "Found value 'goodbye, world' for 'Greeting' instead of 'hello, world' in file '.*/test.toml' at path '.d.e.f'"
+}
+
+## Value not matched
+@test "[toml] should return literal value not matched output" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_match_value_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/test.toml' at path '.a.b.c'"
+}
+
+@test "[toml] should return literal value not partial matched output" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_match_value_no_partial_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'hello, goodbye, world' in file '.*/test.toml' at path '.a.b.c'"
+}
+
+@test "[toml] should return literal value with prefix not matched output" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_match_value_with_prefix_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/test.toml' at path '.a.b.c'"
+}
+
+@test "[toml] should return literal value with suffix not matched output" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_match_value_with_suffix_no_match.json
+    assert_failure 1
+    assert_output --regexp "Found value 'hello, world' for 'Farewell' instead of 'goodbye, world' in file '.*/test.toml' at path '.a.b.c'"
+}
+
+## Value matched
+@test "[toml] should return success output when matching path and literal string value" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_value_match_string.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[toml] should return success output when matching path and literal numeric value" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_value_match_numeric.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[toml] should return success output when matching path and partial literal value" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_value_partial_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[toml] should return success output when matching path and literal value with prefix" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_value_with_prefix_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
+@test "[toml] should return success output when matching path and literal value with suffix" {
+    run check.sh ${CURRENT_PATH}/toml/hardcoding_file_path_value_with_suffix_match.json
+    assert_success
+    assert_output --partial "Hardcoding check: successful!"
+}
+
 # TF
 @test "[tf] should check multiple blocks" {
     run check.sh ${CURRENT_PATH}/tf/hardcoding_file_path_match_value_no_match_multiple_blocks.json

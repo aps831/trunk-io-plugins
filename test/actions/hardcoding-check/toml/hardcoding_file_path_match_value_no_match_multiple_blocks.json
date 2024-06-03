@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.toml",
+        "valuePath": ".a.b.c"
+      }
+    ]
+  },
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "test.toml",
+        "valuePath": ".d.e.f"
+      }
+    ]
+  }
+]

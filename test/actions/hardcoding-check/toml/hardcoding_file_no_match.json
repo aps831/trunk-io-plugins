@@ -1,0 +1,12 @@
+[
+  {
+    "description": "Greeting",
+    "value": "hello, world",
+    "files": [
+      {
+        "filePath": "missing.toml",
+        "valuePath": ".a.b.c"
+      }
+    ]
+  }
+]
