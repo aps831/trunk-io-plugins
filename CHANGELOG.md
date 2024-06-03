@@ -2,11 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.0] - 2024-06-03
+
+### Features
+
+- Add toml support to hardcoding check
+
+### Miscellaneous Tasks
+
+- Update dependabot [skip ci]
+- Upgrade trunk [skip ci]
+- Update dependabot commit message [skip ci]
+- Update delete workflow runs permissions [skip ci]
+- Fix permissions on trunk [skip ci]
+- Update go dependencies
+
 ## [2.2.1] - 2024-01-05
 
 ### Bug Fixes
 
 - Allow for additional space in tfvars file
+
+### Miscellaneous Tasks
+
+- Update for v2.2.1 release [skip ci]
 
 ## [2.2.0] - 2024-01-03
 
