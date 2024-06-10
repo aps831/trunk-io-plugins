@@ -16,6 +16,6 @@ jobs:
     with:
       templated-files: README.tpl.md
       build-script: .bats/bats/bin/bats --recursive --report-formatter tap13 --output tap/ test/
-      tap-test-results-directory: tap
+      test-results-directory: tap
     secrets:
       ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
