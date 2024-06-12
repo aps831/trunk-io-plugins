@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.0] - 2024-06-12
+
+### Features
+
+- Upgrade commitizen
+
+### Miscellaneous Tasks
+
+- Update test results directory
+
 ## [2.3.0] - 2024-06-03
 
 ### Features
@@ -16,6 +26,7 @@ All notable changes to this project will be documented in this file.
 - Update delete workflow runs permissions [skip ci]
 - Fix permissions on trunk [skip ci]
 - Update go dependencies
+- Update for v2.3.0 release [skip ci]
 
 ## [2.2.1] - 2024-01-05
 
