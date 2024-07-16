@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.1] - 2024-07-16
+
+### Bug Fixes
+
+- Remove symlink to bats
+
+### Miscellaneous Tasks
+
+- Upgrade trunk [skip ci]
+
 ## [2.4.0] - 2024-06-12
 
 ### Features
@@ -11,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### Miscellaneous Tasks
 
 - Update test results directory
+- Update for v2.4.0 release [skip ci]
 
 ## [2.3.0] - 2024-06-03
 
