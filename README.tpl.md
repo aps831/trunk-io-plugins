@@ -42,4 +42,4 @@ is required.
 
 ## Tests
 
-To run bats tests: `bats -r test`
+To run bats tests: `.bats/bats/bin/bats -r test`
